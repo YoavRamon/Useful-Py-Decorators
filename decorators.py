@@ -10,3 +10,12 @@ def timing(f):
 
         return ret
     return wrap
+
+
+def easy_debugger(f):
+    def wrap(*args):
+        print('easy line to debug before {}'.format(f.__name__))
+        ret = f(*args)
+        print('easy line to debug after {}'.format(f.__name__))
+        return ret
+    return wrap
