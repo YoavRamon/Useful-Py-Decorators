@@ -27,6 +27,7 @@ def easy_debugger(f):
 def run_multiple_times(times):
     def decorator(function):
         def wrapper(*args, **kwargs):
+            result = None
             for i in range(times):
                 result = function(*args, **kwargs)
             return result
