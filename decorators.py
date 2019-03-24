@@ -23,3 +23,12 @@ def easy_debugger(f):
         return ret
     return wrap
 
+
+def run_multiple_times(times):
+    def decorator(function):
+        def wrapper(*args, **kwargs):
+            for i in range(times):
+                result = function(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator
