@@ -25,11 +25,12 @@ def easy_debugger(f):
 
 
 def run_multiple_times(times):
-    def decorator(function):
-        def wrapper(*args, **kwargs):
+    def decorator(f):
+        @functools.wraps(f)
+        def wrap(*args, **kwargs):
             result = None
             for i in range(times):
-                result = function(*args, **kwargs)
+                result = f(*args, **kwargs)
             return result
-        return wrapper
+        return wrap
     return decorator
