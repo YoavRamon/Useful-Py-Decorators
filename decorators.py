@@ -1,7 +1,9 @@
 import time
+import functools
 
 
 def timing(f):
+    @functools.wraps(f)
     def wrap(*args):
         time1 = time.time()
         ret = f(*args)
@@ -13,9 +15,11 @@ def timing(f):
 
 
 def easy_debugger(f):
+    @functools.wraps(f)
     def wrap(*args):
         print('easy line to debug before {}'.format(f.__name__))
         ret = f(*args)
         print('easy line to debug after {}'.format(f.__name__))
         return ret
     return wrap
+

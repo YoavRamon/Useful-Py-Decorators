@@ -8,7 +8,7 @@ def this_function_takes_time():
     time.sleep(3)
 
 
-@decorators.easy_debuger
+@decorators.easy_debugger
 def this_function_does_something():
     time.sleep(1)
 
