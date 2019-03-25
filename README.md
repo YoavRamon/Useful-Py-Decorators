@@ -55,3 +55,20 @@ Yoav Love Halav
 Yoav Love Halav
 Yoav Love Halav
 ```
+
+**handle_exception** - Catches any exception, prints it and let the code run after the function.
+```python
+from decorators import handle_exception
+
+@handle_exception
+def buggy_function():
+    raise FileExistsError('This file dosen\'t exist!')
+
+buggy_function()
+print('some code after')
+```
+Should output:
+```
+Exception "This file dosen't exist!" raised in function buggy_function
+some code after
+```

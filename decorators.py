@@ -84,3 +84,14 @@ def print_with_color(color):
             return result
         return wrap
     return decorator
+
+
+def handle_exception(f):
+    @functools.wraps(f)
+    def wrap(*args, **kwargs):
+        try:
+            ret = f(*args, **kwargs)
+            return ret
+        except Exception as ex:
+            print('Exception "{}" raised in function {}'.format(ex, f.__name__))
+    return wrap
