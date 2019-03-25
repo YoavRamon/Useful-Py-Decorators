@@ -1,20 +1,20 @@
 import time
 
-import decorators
+from decorators import timing, print_with_color, easy_debugger, run_multiple_times
 
 
-@decorators.timing
+@timing
 def this_function_takes_time():
     time.sleep(3)
 
 
-@decorators.print_with_color('blue')
-@decorators.easy_debugger
+@print_with_color('blue')
+@easy_debugger
 def this_function_does_something():
-    time.sleep(1)
+    print('something')
 
 
-@decorators.run_multiple_times(3)
+@run_multiple_times(3)
 def this_print_words(words):
     print(words)
 
