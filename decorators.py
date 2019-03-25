@@ -41,7 +41,7 @@ def run_multiple_times(times):
 def print_with_color(color):
     colors = {'black': '30', 'red': '31', 'green': '32', 'yellow': '33',
               'blue': '34', 'magenta': '35', 'cyan': '36', 'white': '37'}
-    base_data = '\033[' + (colors.get(color) or '0') + 'm'
+    base_data = '\033[{}m'.format(colors.get(color) or '0')
 
     def _print(*args, **kwargs):
         """The new-style print function from py3k."""
