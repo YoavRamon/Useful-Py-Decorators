@@ -2,6 +2,7 @@
 Useful decorators in python3 that I use a lot
 
 ### Basic Decorators
+
 **timing** - checks the time that it took the function to run and print it in milliseconds.
 
 ```python
