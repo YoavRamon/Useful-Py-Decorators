@@ -66,13 +66,13 @@ def print_with_color(color):
             sep = space
         if end is None:
             end = newline
-        write(base_data)
+        write(base_data)  # Prints the color ANSI code
         for i, arg in enumerate(args):
             if i:
                 write(sep)
             write(arg)
         write(end)
-        write('\033[0m')  # Reset Color
+        write('\033[0m')  # Resets the color ANSI code
 
     def decorator(f):
         @functools.wraps(f)
