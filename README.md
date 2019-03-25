@@ -69,6 +69,14 @@ print('some code after')
 ```
 Should output:
 ```
-Exception "This file dosen't exist!" raised in function buggy_function
+* * * * * That exception was ignored * * * * *
+* Traceback (most recent call last):
+*   File "/Useful-Py-Decorators/decorators.py", line 94, in wrap
+*     ret = f(*args, **kwargs)
+*   File "/Useful-Py-Decorators/tests.py", line 4, in buggy_function
+*     raise FileExistsError('This file dosen\'t exist!')
+* FileExistsError: This file dosen't exist!
+* 
+* * * * * * * * * * * * * * * * * * * * * * * *
 some code after
 ```

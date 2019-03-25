@@ -1,5 +1,6 @@
 import sys
 import time
+import traceback
 import builtins
 import functools
 
@@ -93,5 +94,9 @@ def handle_exception(f):
             ret = f(*args, **kwargs)
             return ret
         except Exception as ex:
-            print('Exception "{}" raised in function {}'.format(ex, f.__name__))
+            tb = traceback.format_exc()
+            print('\033[32m* * * * * That exception was ignored * * * * *\033[31m')
+            for line in tb.split('\n'):
+                print('\033[32m* \033[31m{}'.format(line))
+            print('\033[32m* * * * * * * * * * * * * * * * * * * * * * * *\033[0m')
     return wrap
