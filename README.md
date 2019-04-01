@@ -80,3 +80,20 @@ Should output:
 * * * * * * * * * * * * * * * * * * * * * * * *
 some code after
 ```
+
+**fix_random** - Makes random functions reproducible and consistent.
+```python
+import random
+from decorators import run_multiple_times, fix_random
+
+@run_multiple_times(3)
+@fix_random()
+def print_random_number():
+    print(random.random())
+```
+Should output:
+```
+0.5155408159323152
+0.5155408159323152
+0.5155408159323152
+```

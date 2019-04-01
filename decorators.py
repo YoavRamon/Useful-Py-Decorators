@@ -1,5 +1,6 @@
 import sys
 import time
+import random
 import traceback
 import builtins
 import functools
@@ -100,3 +101,13 @@ def handle_exception(f):
                 print('\033[32m* \033[31m{}'.format(line))
             print('\033[32m* * * * * * * * * * * * * * * * * * * * * * * *\033[0m')
     return wrap
+
+
+def fix_random(seed=1014):
+    def decorator(f):
+        @functools.wraps(f)
+        def wrap(*args, **kwargs):
+            random.seed(seed)
+            return f(*args, **kwargs)
+        return wrap
+    return decorator
