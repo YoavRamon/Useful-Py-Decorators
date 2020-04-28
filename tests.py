@@ -1,6 +1,6 @@
 import time
 import random
-from decorators.decorators import timing, print_with_color, easy_debugger, run_multiple_times, handle_exception, fix_random
+from decorators.basic import timing, print_with_color, easy_debugger, run_multiple_times, handle_exception, fix_random
 
 
 @timing
